@@ -14,7 +14,7 @@
 	--light-grey: #AAA;
 	--yellow: #FFD166;
 	--blue: #233FB9;
-	--dark-blue: #11305B;
+	--dark-blue: #171557;
 	--light-blue: #ADCFFF;
 	--red: #D00;
 	--green: #88D18A;
@@ -43,7 +43,9 @@ html * {
 
 body,
 body.admin,
-body.app {
+body.app,
+body.lighter,
+.columns-area {
 	--background: var(--dark-gradient);
 	--primary: var(--yellow);
 	--secondary: var(--blue);
@@ -51,16 +53,20 @@ body.app {
 	--bg: var(--dark-blue);
 	background: var(--background);
 	color: var(--text);
-	--shadow: 1px 2px 10px #000B, -1px -2px 10px #FFF3;
+	--shadow: 1px 2px 5px #000B, -1px -2px 5px #FFF3;
 	--little-shadow: 1px 1px 6px #000A, -1px -1px 5px #FFF3;
 	--slight: #FFF8;
 	--slightest: #FFF1;
+
+	font-family: var(--font-main) !important;
 }
 
 @media screen and (prefers-color-scheme: light) {
   body,
   body.app,
-  body.admin {
+  body.admin,
+  body.lighter,
+  .columns-area {
 	--background: var(--gradient);
 	--primary: var(--purple);
 	--secondary: var(--yellow);
@@ -73,7 +79,11 @@ body.app {
   }
 }
 
-.empty-column-indicator, .detailed-status, .notification, .status, .getting-started, .column-link, .column-subheading, .column-header, .column-header__button, .search__input, .drawer__header, .drawer__tab, .column-back-button,  .account__header__content, .account__header, .account__action-bar__tab > span, .account__action-bar__tab strong, .column-header__back-button, .search__icon .fa, .search, .drawer__inner, .column-header__collapsible-inner, .setting-toggle__label, .column-settings__section, .column-inline-form, .getting-started__wrapper, .keyboard-shortcuts, .status__content, .account__header__bio .account__header__fields, .account__header__fields dt, .account__header__bio .account__header__fields dl, .account__header__bio .account__header__fields dt, .account__header__fields dd, .account__section-headline, .account__section-headline a, .column > .scrollable, .drawer--header, .account__header__bar, .admin-wrapper .sidebar-wrapper__inner, .account__section-headline button, .notification__filter-bar button, .account__section-headline, .notification__filter-bar, .interaction-modal, .card__bar, .table {
+.detailed-status, .notification, .status, .getting-started, .column-subheading, .column-header, .column-header__button, .search__input, .drawer__header, .drawer__tab, .column-back-button,  .account__header__content, .account__header, .account__action-bar__tab > span, .account__action-bar__tab strong, .column-header__back-button, .search__icon .fa, .search, .column-header__collapsible-inner, .setting-toggle__label, .column-settings__section, .column-inline-form, .getting-started__wrapper, .keyboard-shortcuts, .status__content, .account__header__bio .account__header__fields, .account__header__fields dt, .account__header__bio .account__header__fields dl, .account__header__bio .account__header__fields dt, .account__header__fields dd, .account__section-headline, .account__section-headline a, .column > .scrollable, .drawer--header, .account__header__bar, .admin-wrapper .sidebar-wrapper__inner, .account__section-headline button, .account__section-headline, .interaction-modal, .card__bar, .table, .status.collapsed.has-background::before, .compose-form .autosuggest-input label .autosuggest-textarea__textarea, .compose-form .autosuggest-textarea label .autosuggest-textarea__textarea {
+	background: var(--bg) !important;
+}
+
+.empty-column-indicator {
 	background: var(--bg) !important;
 	border-radius: 1rem !important;
 }
@@ -94,7 +104,7 @@ body.app {
 	border: none !important;
 }
 .button:hover, .button:focus,
-.simple_form .block-button:focus, .simple_form .block-button:hover, .simple_form .button:active, .simple_form .button:focus, .simple_form .button:hover, .simple_form button:focus, .simple_form button:hover, .admin-wrapper .content__heading__tabs a.selected:active, .admin-wrapper .content__heading__tabs a.selected:focus, .admin-wrapper .content__heading__tabs a.selected:hover, .admin-wrapper .content__heading__tabs a.selected {
+.simple_form .block-button:focus, .simple_form .block-button:hover, .simple_form .button:active, .simple_form .button:focus, .simple_form .button:hover, .simple_form button:focus, .simple_form button:hover, .admin-wrapper .content__heading__tabs a.selected:active, .admin-wrapper .content__heading__tabs a.selected:focus, .admin-wrapper .content__heading__tabs a.selected:hover, .admin-wrapper .content__heading__tabs a.selected, .loading-bar, .react-toggle--checked:is(:hover, :focus-within):not(.react-toggle--disabled) .react-toggle-track {
 	box-shadow: none;
 	background: var(--primary) !important;
 	color: var(--bg) !important;
@@ -113,18 +123,18 @@ body.app {
 	color: var(--text) !important;
 }
 
-.tabs-bar__wrapper, .columns-area__panels__pane--navigational .navigation-panel, .explore__search-header, .dropdown-menu__item a, .dropdown-menu__item button, .dropdown-menu__item a:active, .dropdown-menu__item a:focus, .dropdown-menu__item a:hover, .dropdown-menu__item button:active, .dropdown-menu__item button:focus, .dropdown-menu__item button:hover, .drawer--header a:focus, .drawer--header a:hover, img.letterbox, .table td, .table th, .media-gallery__item.letterbox, .search-results__header, .search-results__section h5, .video-player, .batch-table__row {
+.tabs-bar__wrapper, .columns-area__panels__pane--navigational .navigation-panel, .explore__search-header, .dropdown-menu__item a, .dropdown-menu__item button, .dropdown-menu__item a:active, .dropdown-menu__item a:focus, .dropdown-menu__item a:hover, .dropdown-menu__item button:active, .dropdown-menu__item button:focus, .dropdown-menu__item button:hover, .drawer--header a:focus, .drawer--header a:hover, img.letterbox, .table td, .table th, .media-gallery__item.letterbox, .search-results__header, .search-results__section h5, .video-player, .batch-table__row, .column-link, .drawer__inner, .account__section-headline button, .notification__filter-bar button, .account__section-headline, .notification__filter-bar {
  	background: none;
  	border-left: none;
  	border-top: none;
 }
 
-.server-banner__introduction, .server-banner h4, .prose, .account__header__bio .account__header__content, .prose b, .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong, .about__section__body, .column-link--transparent, .column-link, .sign-in-banner p, .about__mail, .server-banner__number, .about__meta h4, .account__header__tabs__name h1 small, .rules-list, .admin-wrapper .content__heading__tabs a, .simple_form .hint, .simple_form p.hint, .admin-wrapper .sidebar ul a, .status-card__title, .empty-column-indicator, .follow_requests-unlocked_explanation, a.table-action-link, button.table-action-link, .reply-indicator__content, .status__content, .icon-button:active, .icon-button:focus, .icon-button:hover, .status.light .display-name strong, .status.light .status__content, .admin-wrapper .content > p, .permissions-list__item, .follow-prompt, .oauth-prompt, .oauth-prompt h3,
-.account__header__bio .account__header__fields dt, .account__header__fields dt, .account__display-name strong, .status__display-name strong, .getting-started__trends h4, .admin-wrapper .content h2, .simple_form .input.with_block_label > label, .simple_form .input.with_label .label_input > label, .simple_form .lead, .simple_form p.lead, .account__action-bar__tab strong, .navigation-bar strong, .admin-wrapper .content h4, .admin-wrapper .content h6, .admin-wrapper .content .fields-group h6, .card__bar .display-name strong, .accounts-table__count, .account-header .name, .follow-prompt strong, .oauth-prompt strong {
+.server-banner__introduction, .server-banner h4, .prose, .account__header__bio .account__header__content, .prose b, .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6, .prose strong, .about__section__body, .column-link--transparent, .column-link, .sign-in-banner p, .about__mail, .server-banner__number, .about__meta h4, .account__header__tabs__name h1 small, .rules-list, .admin-wrapper .content__heading__tabs a, .simple_form .hint, .simple_form p.hint, .admin-wrapper .sidebar ul a, .status-card__title, .empty-column-indicator, .follow_requests-unlocked_explanation, a.table-action-link, .compose-form .autosuggest-input label .autosuggest-textarea__textarea, .compose-form .autosuggest-textarea label .autosuggest-textarea__textarea, button.table-action-link, .reply-indicator__content, .status__content, .icon-button:active, .icon-button:focus, .icon-button:hover, .status.light .display-name strong, .status.light .status__content, .admin-wrapper .content > p, .permissions-list__item, .follow-prompt, .oauth-prompt, .oauth-prompt h3, .compose-form .autosuggest-input label .autosuggest-textarea__textarea::placeholder, .compose-form .autosuggest-textarea label .autosuggest-textarea__textarea::placeholder,
+.account__header__bio .account__header__fields dt, .account__header__fields dt, .account__display-name strong, .status__display-name strong, .getting-started__trends h4, .admin-wrapper .content h2, .simple_form .input.with_block_label > label, .simple_form .input.with_label .label_input > label, .simple_form .lead, .simple_form p.lead, .account__action-bar__tab strong, .navigation-bar strong, .admin-wrapper .content h4, .admin-wrapper .content h6, .admin-wrapper .content .fields-group h6, .card__bar .display-name strong, .accounts-table__count, .account-header .name, .follow-prompt strong, .oauth-prompt strong, .detailed-status__display-name strong, .getting-started__trends h4 a {
 	color: var(--text);
 }
 
-.prose a, .status__content a, .account .account__display-name, .account__header__tabs__name h1, .trends__item__name a, .admin-wrapper .sidebar ul .simple-navigation-active-leaf a, .column-link--transparent:active, .column-link--transparent:focus, .column-link--transparent:hover, .account__header__bio .account__header__fields a, a.table-action-link:hover, button.table-action-link:hover, .reply-indicator__header > .account.small, .attachment-list__list a, .simple_form .hint a, .admin-wrapper .content .muted-hint a, body .muted-hint a, .inline-name-tag, .name-tag, a.inline-name-tag, a.name-tag {
+.prose a, .status__content a, .account .account__display-name, .account__header__tabs__name h1, .trends__item__name a, .admin-wrapper .sidebar ul .simple-navigation-active-leaf a, .column-link--transparent:active, .column-link--transparent:focus, .column-link--transparent:hover, .column-link--transparent.active, .account__header__bio .account__header__fields a, a.table-action-link:hover, button.table-action-link:hover, .reply-indicator__header > .account.small, .attachment-list__list a, .simple_form .hint a, .admin-wrapper .content .muted-hint a, body .muted-hint a, .inline-name-tag, .name-tag, a.inline-name-tag, a.name-tag, .column-header.active .column-header__icon, .column-header__back-button, .column-header__button.active, .column-header__button.active:hover, .column-header__notif-cleaning-buttons button.active, .column-header__notif-cleaning-buttons button.active:hover, .column-link:active, .column-link:focus, .column-link:hover, .form-footer a {
 	color: var(--primary);
 }
 
@@ -137,7 +147,7 @@ body.app {
 	background: var(--secondary);
 }
 
-.about__section__title, .search__input, .search, .about__meta, boost-modal__container status.status-public {
+.about__section__title, .search__input, .search, .about__meta, boost-modal__container status.status-public, .column-header {
 	border-radius: 10px !important;
 }
 
@@ -160,7 +170,7 @@ body.app {
 	border-radius: 0 0 10px 10px;
 }
 
-.rules-list li::before, .dropdown-menu, .detailed-status__action-bar, .dropdown-menu__item a, .dropdown-menu__item button,  {
+.rules-list li::before, .dropdown-menu, .detailed-status__action-bar, .dropdown-menu__item a, .dropdown-menu__item button  {
 	background: var(--yellow);
 	color: var(--dark-blue);
 	border: none !important;
@@ -193,7 +203,7 @@ body.app {
 	box-shadow: var(--shadow);
 }
 
-.column-header__button, .column-header__notif-cleaning-buttons button, .drawer--header > *, .account__section-headline a, .account__section-headline button, .notification__filter-bar a, .notification__filter-bar button, .status__info__icons, .trends__item__name, .link-footer p, .link-footer p a, .interaction-modal__lead p, .interaction-modal__choices__choice p, .icon-button, .account__header__bio .account__header__fields dd, .notification__message, .search-results__header, .search-results__section h5, .account__disclaimer, .column-subheading, .about__footer, .about__footer p, .reply-indicator__content a, .block-modal__action-bar > div, .boost-modal__action-bar > div, .confirmation-modal__action-bar > div, .doodle-modal__action-bar > div, .mute-modal__action-bar > div, .admin-wrapper .content .muted-hint, body .muted-hint, .card__bar .display-name span, .accounts-table tbody td.accounts-table__extra, .accounts-table__count small, .permissions-list__item__text__type {
+.column-header__button, .column-header__notif-cleaning-buttons button, .drawer--header > *, .account__section-headline a, .account__section-headline button, .notification__filter-bar a, .notification__filter-bar button, .status__info__icons, .trends__item__name, .link-footer p, .link-footer p a, .interaction-modal__lead p, .interaction-modal__choices__choice p, .icon-button, .account__header__bio .account__header__fields dd, .notification__message, .search-results__header, .search-results__section h5, .account__disclaimer, .column-subheading, .about__footer, .about__footer p, .reply-indicator__content a, .block-modal__action-bar > div, .boost-modal__action-bar > div, .confirmation-modal__action-bar > div, .doodle-modal__action-bar > div, .mute-modal__action-bar > div, .admin-wrapper .content .muted-hint, body .muted-hint, .card__bar .display-name span, .accounts-table tbody td.accounts-table__extra, .accounts-table__count small, .permissions-list__item__text__type, .column-settings__section, .setting-meta__label, .setting-toggle__label, .column-header__collapsible {
 	color: var(--slight);
 }
 
@@ -212,7 +222,7 @@ body.app {
 	border-radius: 10000px
 }
 
-.notification__message .fa, .account__section-headline a.active, .account__section-headline button.active, .notification__filter-bar a.active, .notification__filter-bar button.active, .load-more, .load-gap, .status__content a.unhandled-link .link-origin-tag, .interaction-modal__icon, .column-link--transparent.active, .icon-button.active, .dropdown-menu__item a:active, .dropdown-menu__item a:focus, .dropdown-menu__item a:hover, .dropdown-menu__item button:active, .dropdown-menu__item button:focus, .dropdown-menu__item button:hover, .drawer--header a:focus, .drawer--header a:hover, .reply-indicator__content .status__content__spoiler-link, .status__content .status__content__spoiler-link, .reply-indicator__content a.unhandled-link, .status__content a.unhandled-link {
+.notification__message .fa, .account__section-headline a.active, .account__section-headline button.active, .notification__filter-bar a.active, .notification__filter-bar button.active, .load-more, .load-gap, .status__content a.unhandled-link .link-origin-tag, .interaction-modal__icon, .icon-button.active, .dropdown-menu__item a:active, .dropdown-menu__item a:focus, .dropdown-menu__item a:hover, .dropdown-menu__item button:active, .dropdown-menu__item button:focus, .dropdown-menu__item button:hover, .drawer--header a:focus, .drawer--header a:hover, .reply-indicator__content .status__content__spoiler-link, .status__content .status__content__spoiler-link, .reply-indicator__content a.unhandled-link, .status__content a.unhandled-link, .admin-wrapper .content .warning-hint, body .warning-hint {
 	color: var(--orange)
 }
 
@@ -226,10 +236,6 @@ body.app {
 
 .ui__header {
 	margin-bottom: 10px;
-}
-
-.column-link.column-link--transparent {
-	margin: 10px;
 }
 
 .compose-panel hr, .navigation-panel hr, .admin-wrapper .content hr {
@@ -251,8 +257,8 @@ body.app {
 	border: none;
 }
 
-.column-link {
-	padding: 15px 6px;
+.account__header__tabs__buttons {
+	overflow: visible;
 }
 
 .account__action-bar__tab.active {
@@ -283,9 +289,8 @@ body.app {
 	display: none !important;
 }
 
-.simple_form input[type="datetime-local"]:active, .simple_form input[type="datetime-local"]:focus, .simple_form input[type="email"]:active, .simple_form input[type="email"]:focus, .simple_form input[type="number"]:active, .simple_form input[type="number"]:focus, .simple_form input[type="password"]:active, .simple_form input[type="password"]:focus, .simple_form input[type="text"]:active, .simple_form input[type="text"]:focus, .simple_form input[type="url"]:active, .simple_form input[type="url"]:focus, .simple_form textarea:active, .simple_form textarea:focus, .oauth-prompt .permissions-list {
-	border: none !important;
-	outline: 3px solid var(--primary);
+.simple_form input[type='datetime-local']:active, .simple_form input[type='datetime-local']:focus, .simple_form input[type='email']:active, .simple_form input[type='email']:focus, .simple_form input[type='number']:active, .simple_form input[type='number']:focus, .simple_form input[type='password']:active, .simple_form input[type='password']:focus, .simple_form input[type='text']:active, .simple_form input[type='text']:focus, .simple_form input[type='url']:active, .simple_form input[type='url']:focus, .simple_form textarea:active, .simple_form textarea:focus, .oauth-prompt .permissions-list {
+	border: 3px solid var(--primary);
 }
 
 .simple_form input[type='datetime-local'], .simple_form input[type='email'], .simple_form input[type='number'], .simple_form input[type='password'], .simple_form input[type='text'], .simple_form input[type='url'], .simple_form textarea {
@@ -293,7 +298,7 @@ body.app {
 	border-radius: 1rem;
 }
 
-.account-header {
+.account-header, .getting-started__trends h4 {
 	border-bottom: none;
 }
 
@@ -304,4 +309,9 @@ body.app {
 
 .account__avatar {
 	border-radius: 15%;
+}
+
+.compose-panel .compose-form__autosuggest-wrapper {
+	background: var(--bg);
+	border-radius: 1rem 1rem 0 0;
 }
